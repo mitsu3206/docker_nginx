@@ -1,1 +1,1 @@
-FROM nginx:latest-alpine
+FROM nginx:alpine

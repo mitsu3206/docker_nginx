@@ -11,11 +11,14 @@ services:
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
+    image: nginx-alpine
     container_name: nginx
     restart: always
     tty: true
     ports:
       - "80:80"
+    volumes:
+      - ./docker/nginx/data:/usr/share/nginx/html
     networks:
       - web
 
