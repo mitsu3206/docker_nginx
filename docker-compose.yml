@@ -1,0 +1,24 @@
+# Compose fileのバージョンを指定する。
+# 最新バージョンを使用する場合は、指定不要となる。
+# version: '3.9'
+
+services:
+
+  ################################
+  # web
+  ################################
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    container_name: nginx
+    restart: always
+    tty: true
+    ports:
+      - "80:80"
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
