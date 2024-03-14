@@ -20,8 +20,8 @@ services:
     volumes:
       - ./docker/nginx/src:/usr/share/nginx/html
     networks:
-      - web
+      - shared-network
 
 networks:
-  web:
-    driver: bridge
+  shared-network:
+    external: true
